@@ -1,14 +1,15 @@
 const routes = [
-  "Vue",
-  "React",
+  "html",
+  "WPO",
   "JS",
-  "MarkDown",
+  "React",
+  // "Vue",
+  // "MarkDown",
 ]
 
 const getAside = () => {
   const sidebar = {};
   for (const route of routes) {
-    // ../Vue/index.js 파일을 읽는다.
     Object.assign(sidebar, require("../" + route));
   }
   return sidebar;
@@ -23,11 +24,13 @@ module.exports = {
     lastUpdated: 'Last Updated',
     sidebar: getAside(),
     nav: [
-      // { text: 'Home', link: '/' },
       { text: 'React', link: '/React/' },
-      { text: 'Vue', link: '/Vue/' },
       { text: "JS", link: "/JS/" },
-      { text: "MarkDown", link: "/MarkDown/"}
+      { text: "WPO", link: "/WPO/"},
+      { text: "HTML/DOM", link: "/html" }
+      // { text: 'Home', link: '/' },
+      // { text: 'Vue', link: '/Vue/' },
+      // { text: "MarkDown", link: "/MarkDown/"}
       // { text: 'About', link: '/about/' },
       //   text: 'About',
       //   items: [
@@ -37,7 +40,6 @@ module.exports = {
       // }
     ]
   },
-
   plugins: [
     '@vuepress/last-updated',
     '@vuepress/back-to-top',
