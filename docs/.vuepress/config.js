@@ -2,9 +2,10 @@ const routes = [
   "html",
   "WPO",
   "JS",
+  "UI",
   "React",
-  // "Vue",
-  // "MarkDown",
+  "Vue",
+  "MarkDown",
 ]
 
 const getAside = () => {
@@ -24,10 +25,11 @@ module.exports = {
     lastUpdated: 'Last Updated',
     sidebar: getAside(),
     nav: [
-      { text: 'React', link: '/React/' },
+      // { text: 'React', link: '/React/' },
       { text: "JS", link: "/JS/" },
       { text: "WPO", link: "/WPO/"},
-      { text: "HTML/DOM", link: "/html" }
+      { text: "HTML/DOM", link: "/html/" },
+      { text: "UI", link: "/UI/" }
       // { text: 'Home', link: '/' },
       // { text: 'Vue', link: '/Vue/' },
       // { text: "MarkDown", link: "/MarkDown/"}
