@@ -12,6 +12,3 @@ meta:
   tags: ["image-wpo"]
 ---
 
-#basic
-
-<Comment />
