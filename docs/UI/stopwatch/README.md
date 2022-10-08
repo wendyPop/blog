@@ -2,14 +2,12 @@
 title: 스톱 워치
 meta:
 - name: description
-  content: 문서의 description
+  content: make stop watch
 - property: og:title
-  content: 문서의 title
-- property: og:description
-  content: 문서의 description
+  content: stop watch
 - property: og:url
-  content: https://mysite.com/hello.html
-  tags: ["components", "ui-component"]
+  content: https://wendypop.github.io/blog/UI/stopwatch/
+  tags: ["components", "ui-component", "stop-watch"]
 ---
 
 <StopWatch />
@@ -30,10 +28,10 @@ meta:
 ```plain
 1. 대기
 2. 사용자가 시작버튼(▶) 을 누른다.
-3. 0.03 초마다 카운트업하는 타이머를 돌리고 화면에 표시된 시간도 갱신해준다.
-4. 타이머가 계속 도는 상태  (이벤트 대기)
+3. 1초마다 카운트업한다.
+4. 3번을 반복
 (e) 사용자가 일시정지(⏸)버튼을 누르면 타이머가 멈춘다.
-(e) 사용자가 초기화(🔁)버튼을 누르면 타이머가 초기화된다.
+(e) 사용자가 초기화(🔁)버튼을 누르면 타이머가 0초로 초기화되고 1번 대기상태가 된다.
 ```
 
 ```html
