@@ -12,8 +12,6 @@ meta:
   tags: ["wpo","dom-wpo", "DOM-monster"]
 ---
 
-[[toc]]
-
 
 1. [돔 몬스터](http://mir.aculo.us/dom-monster/) 사이트에 가서, 브라우저 즐겨찾기로 추가
 2. 원하는 웹페이지에서 즐겨찾기된 'DOM Monster!'를 클릭하면 돔몬스터가 페이지를 분석 시작후 최적화 팁을 제공

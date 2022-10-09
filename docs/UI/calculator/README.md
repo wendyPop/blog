@@ -31,15 +31,15 @@ meta:
    - null 체크
    - eval 수행 실패시 에러처리
 
-### 키보드 이벤트에 대하여
+### KeyboardEvent 에 대하여
 
 ![before](~@source/.vuepress/assets/img/ui/KeyEvent.png)
 이미지상의 가장 상위 인터페이스인 Event 객체는 Object 객체를 상속받으며 Event, UIEvent, KeyboardEvent 모두 생성자 함수입니다.
 즉 상위 객체의 기능 또한 모두 포함하고 있습니다. 이벤트 모델의 심도깊은 공부도 곁들이면 좋을 것 같습니다.
 
 keyboardEvent 의 type 은  `keydown`, `keyup`, `keypress` 이 있는데 keydown 과 keypress 는 비슷해보이지만 약간의 차이가 있으며 [keypress 는 권장사항이 아닙니다.](https://developer.mozilla.org/en-US/docs/Web/API/Element/keypress_event)
-두 이벤트의 차이는 `keydown` 이벤트는 control, options, shift, tab, delete, 방향키, 문자, 숫자, 특수 문자키 등 즉 모든 키를 눌렀을 때 발생하는 이벤트이며 (`keyup` 이벤트도 마찬가지)
-`keypress` 이벤트는 문자, 숫자, 특수 문자키를 눌렀을 때만 발생합니다.
+두 type의 차이는 `keydown` type은 control, options, shift, tab, delete, 방향키, 문자, 숫자, 특수 문자키 등 즉 모든 키를 눌렀을 때 발생하는 이벤트타입이며 (`keyup` type도 마찬가지)
+`keypress` type은 문자, 숫자, 특수 문자키를 눌렀을 때만 발생합니다.
 
 ```js
 
@@ -61,14 +61,14 @@ document.addEventListener('keydown', (event) => {
 <br/>
 
 ![before](~@source/.vuepress/assets/img/ui/keycode.png)
-keyCode 는 무려 249개나 되고 위 이미지는 일부만 발췌한 건데도 상당합니다.  
+keyCode는 무려 249개나 되고 위 이미지는 일부만 발췌한 건데도 상당합니다.  
 엔터키는 13, ESC는 27....바로바로 알아먹기 어렵습니다. 직관적인 key 속성 사용 권장에 동감이 되네요.
 하지만 레거시 프로젝트들은 여전히 사용 중 일테니 알아두긴 해야 할 것 같습니다.
 입력한 키와 keyCode 대응 관계는 [여기](https://www.toptal.com/developers/keycode) 에서 편리하게 확인할 수 있네요.  
 
 다시 key로 돌아와서  
-key 의 대응관계는 `'Control', 'Enter','Shift','Enter','Ctrl','Enter'` 등 다양하지만 
-자주 사용하는 key 값들은 익혀두되 나머지는 [공식문서](https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values) 를 참고하는 것이 가장 믿음직스러울 것 같습니다.
+key의 대응관계는 `'Control', 'Enter','Shift','Enter','Ctrl','Enter'` 등 다양하지만 
+자주 사용하는 key값들은 익혀두되 나머지는 [공식문서](https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values) 를 참고하는 것이 가장 믿음직스러울 것 같습니다.
 
 <br/>
 <br/>

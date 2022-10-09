@@ -195,8 +195,8 @@ resetButton.addEventListener('click', reset)
 function showButton( key ) {
   const buttonToShow = key === 'PLAY' ? playButton : pauseButton
   const buttonToHide = key === 'PLAY' ? pauseButton : playButton
-  // js로 style 객체로 여러번 접근하여 여러번 변경하는 것 보다 
-  // className 속성으로 css 클래스명 제어 방식이 성능면에서 좋습니다. 
+  // js에서 style 객체에 여러번 접근하여 스타일 변경을 하는 것 보다 
+  // className 속성으로 css 클래스명 제어 방식이 성능면에서 좋습니다.
   // 또한 reflow가 발생하는 display 속성이니 실무에서는 사용시 고민해보세요.
   buttonToShow.style.display = 'block'
   buttonToHide.style.display = 'none'
