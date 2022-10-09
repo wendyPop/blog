@@ -136,12 +136,13 @@ td {
   border: 0
 }
 .body {
+  width: 100%;
   height: 50vh;
   border-radius: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow-x: hidden;
+  overflow-x: scroll;
   flex-direction: column;
   background-color: #219123;
   background-image: linear-gradient(62deg, #b6fb7e 0%, #1f7a06 100%);

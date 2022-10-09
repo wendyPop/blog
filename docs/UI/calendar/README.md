@@ -18,16 +18,22 @@ meta:
 
 
 ### 달력 구현시 필요한 것들! 생각하는 과정을 가져봅시다.
-- 이번 달의 마지막 일자 구하기.
-- 전월( 이번, 이전 이 단어의 구분이 미묘하여 전월, 금월로 바꿔봅니다. )의 마지막 일자 구하기. 금월의 첫 일자의 위치가 구해집니다.
-- 요일 구하기 - 날짜객체.getDay()
-- 일자 구하기 - 날짜객체.getDate()
 
 <br/>
 
-**특정 월의 막일 구하는 방법**
-- new Date(연도, 월, 0) 하면 지난달의 막일을 구할 수 있습니다.
-- new Date(연도, 월+1, 0) 하면 이번달의 막일이 구해집니다.
+**이번달 1일과 마지막 일자 구하기**
+- 월마다 마지막 일자가 다르기 때문에 계산이 필요합니다.
+- 이번 달의 마지막 일자의 요일 구하기. 왜 구하냐면 다음 달 첫 일자의 위치를 알수 있습니다.
+  - ex: 2022년 9월 30일은 금요일입니다. 자바스크립트에서 getDay()로 구한 금요일은 5입니다. 그럼 2022년 10월 1일은 토요일(6)이니 이 6을 인덱스로 활용하여 이용해서 달력을 그립니다.
+- 지난 달의 마지막 일자 구하기. 이번 달 첫 일자의 위치를 알 수 있습니다.
+  <br/>
+  <br/>
+**요일 구하는 메서드**
+    - 날짜객체.getDay()     // 요일
+    - 날짜객체.getDate()  // 일
+    - new Date(연도, 월, 0).getDate() 하면 지난달의 막일을 구할 수 있습니다.
+    - new Date(연도, 월, 0).getDay() 하면 지난달 막일의 요일이 구해집니다.
+    - new Date(연도, 월+1, 0).getDate() 하면 이번달의 막일이 구해집니다.
 ```js
 let today = new Date()
 
@@ -50,10 +56,11 @@ new Date(today.getFullYear(), today.getMonth() + 1, 0).getDay()
 src="~@source/.vuepress/assets/img/ui/getToday.png"
 width="300"
 />
-```js
+```js{6-7}
 let today = new Date()
 let lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate()
 
+// 1 일부터 마지막 날짜까지 순환
 for (let i = 1; i <= lastDate; i++) {
     if ( i === new Date().getDate() && today.getMonth() === new Date().getMonth()) {
       // 오늘
@@ -66,8 +73,8 @@ for (let i = 1; i <= lastDate; i++) {
 ### 완성본 
 #### html, css, js 버전
 사실 바닐라스크립트로 짜는게 더 재밌습니다.  
-하지만 간단한 구현체이기도 하고, 당장에 구현하기에 재미있다는 것이지
-유지보수성과 협업 등 많은 점을 고려해보면 모던 프레임워크는 필수입니다.
+하지만 간단한 구현체이기도 하고, 당장 간단히 구현하기에 재미있다는 것이지
+유지보수성과 협업, 성능 등 많은 점을 고려해보면 모던 프레임워크가 좋습니다.
 
 ```html
 <!DOCTYPE html>
@@ -304,14 +311,14 @@ renderCalendar()
             {{ prevLastDay - n + 1 }}
           </div>
           <!-- 1일부터 마지막날까지 -->
-            <template v-for="i in lastDay">
-              <template v-if="i === new Date().getDate() && date.getMonth() === new Date().getMonth()">
-                <div class="today day"> {{i}} </div>
-              </template>
-              <template>
-                <div class="day"> {{i}} </div>
-              </template>
+          <template v-for="i in lastDay">
+            <template v-if="i === new Date().getDate() && date.getMonth() === new Date().getMonth()">
+              <div class="today day"> {{i}} </div>
             </template>
+            <template>
+              <div class="day"> {{i}} </div>
+            </template>
+          </template>
           <!--다음달. nextDays 가 5라면 n은 1부터 5까지 순환 출력. 1부터 시작됩니다. -->
           <div v-for="j in nextDays" class="next-days day"> {{j}} </div>
         </div>
@@ -332,7 +339,7 @@ export default {
         "August", "September", "October",
         "November", "December"
       ],
-      firstDayIndex: 0,  // 이번달 첫날의 요일 ( 1이면 월욜, 6이면 토요일 이런식 )
+      firstDayIndex: 0,  // 이번달 첫날의 요일 ( 1이면 월요일, 6이면 토요일 )
       prevLastDay: 0,    // 지난달 마지막 일자
       lastDay : 0,       // 이번달 마지막일 자
       nextDays: 0        // 다음달 N일
@@ -501,3 +508,5 @@ export default {
 </style>
 
 ```
+
+<Comment />

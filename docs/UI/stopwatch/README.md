@@ -19,9 +19,9 @@ meta:
 <br/>
 
 #### 스탑워치를 구현할 때 필요한 API
-- Date API
-- 타이머 API ( setInterval, clearInterval )
-- event API ( addEventListener )
+- Date
+- 타이머 ( setInterval, clearInterval )
+- event ( addEventListener )
 
 
 ### 간단 로직 
@@ -74,7 +74,7 @@ meta:
             </button>
         </div>
 
-        <!-- 랜터 트리 구성에 방해되지 않도록 스크립트는 나중 처리! -->
+        <!-- 랜터 트리 구성에 방해되지 않도록 스크립트는 나중 처리 -->
         <script src="script.js"></script>
     </body>
 </html>
@@ -151,16 +151,12 @@ body {
 ```js
 // script.js
 
-// 필요한 값들 모음  
+// 타이머에 필요한 값 모음  
 let startTime
 let elapsedTime = 0
 let timerInterval
 
-// 화면 요소들 담아두기
-let playButton = document.getElementById('playButton')
-let pauseButton = document.getElementById('pauseButton')
-let resetButton = document.getElementById('resetButton')
-
+// 주요 부분
 // 시작버튼(▶) 클릭
 const start = () => {
   startTime = Date.now() - elapsedTime
@@ -185,24 +181,31 @@ const reset = () => {
   showButton('PLAY')
 }
 
-// 이벤트 핸들러 부착해두기
+// 화면 요소에 이벤트 핸들러 부착
+let playButton = document.getElementById('playButton')
+let pauseButton = document.getElementById('pauseButton')
+let resetButton = document.getElementById('resetButton')
+
 playButton.addEventListener('click', start)
 pauseButton.addEventListener('click', pause)
 resetButton.addEventListener('click', reset)
 
-// 시간 표시 함수
-function print(txt) {
-  document.getElementById('display').innerHTML = txt
-}
 
-// 시작 또는 일시정지 버튼 toggle 
+// 시작 또는 일시정지 버튼 스타일 toggle
 function showButton( key ) {
   const buttonToShow = key === 'PLAY' ? playButton : pauseButton
   const buttonToHide = key === 'PLAY' ? pauseButton : playButton
+  // js로 style 객체로 여러번 접근하여 여러번 변경하는 것 보다 
+  // className 속성으로 css 클래스명 제어 방식이 성능면에서 좋습니다. 
+  // 또한 reflow가 발생하는 display 속성이니 실무에서는 사용시 고민해보세요.
   buttonToShow.style.display = 'block'
   buttonToHide.style.display = 'none'
 }
 
+// 화면에 시간 표시
+function print(txt) {
+  document.getElementById('display').innerHTML = txt
+}
 // 시간 포맷팅
 function timeToString(time) {
   let diffInHrs = time / 3600000;

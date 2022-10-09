@@ -18,7 +18,7 @@
 export default {
   methods: {
     goMain() {
-      return window.location.replace("https://kyounghwan01.github.io/blog");
+      return window.location.replace("https://wendypop.github.io/blog/");
     }
   }
 };

@@ -26,10 +26,10 @@ module.exports = {
     sidebar: getAside(),
     nav: [
       // { text: 'React', link: '/React/' },
-      { text: "JS", link: "/JS/" },
       { text: "WPO", link: "/WPO/"},
-      { text: "HTML/DOM", link: "/html/" },
-      { text: "UI", link: "/UI/" }
+      { text: "UI", link: "/UI/" },
+      // { text: "JS", link: "/JS/" },
+      // { text: "HTML/DOM", link: "/html/" },
       // { text: 'Home', link: '/' },
       // { text: 'Vue', link: '/Vue/' },
       // { text: "MarkDown", link: "/MarkDown/"}
