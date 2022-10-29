@@ -123,7 +123,7 @@ console.timeEnd('타이머');
 <br />
 <br />
 
-### 5. 객체 데이터를 테이틀향으로 보기좋게 로그 찍기
+### 5. 객체 데이터를 테이틀 모양으로 보기좋게 로그 찍기
 
 ```js{7}
 const obj = {
@@ -164,7 +164,7 @@ console.log("1. check codebuild");
 console.log("2. check server status");
 console.groupEnd();
 ```
-결과
+결과  
 groupCollapsed 를 써서 토글이 접힌채로 로그가 찍힙니다.  
 <img src="~@source/.vuepress/assets/img/js/console/gouping.png" width="300">
 
