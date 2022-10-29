@@ -25,10 +25,10 @@ module.exports = {
     lastUpdated: 'Last Updated',
     sidebar: getAside(),
     nav: [
-      // { text: 'React', link: '/React/' },
-      { text: "WPO", link: "/WPO/"},
+      { text: 'React', link: '/React/' },
+      // { text: "WPO", link: "/WPO/"},
       { text: "UI", link: "/UI/" },
-      // { text: "JS", link: "/JS/" },
+      { text: "JS", link: "/JS/" },
       // { text: "HTML/DOM", link: "/html/" },
       // { text: 'Home', link: '/' },
       // { text: 'Vue', link: '/Vue/' },

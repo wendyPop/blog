@@ -1,37 +1,34 @@
 ---
-title: 웹팩 코드 분할 기법 적용 번들 파일 확인
+title: 컴포넌트 lazy load
 meta:
 - name: description
   content: webpack bundle analyzer
 - property: og:title
   content: 웹팩 코드 분할
 - property: og:description
-  content: 웹팩 코드 분할
+  content: 리액트 웹팩 코드 분할
 - property: og:url
-  content: https://wendypop.github.io/blog/WPO/tools/webpack-bundle-analyze/
-  tags: ["wpo", "webpack-bundle-analyzer", "code-split", "code-spliting"]
+  content: https://wendypop.github.io/blog/React/webpack-bundle-analyze/
+  tags: ["react", "wpo", "lazy-load", "webpack-bundle-analyzer", "code-split", "code-spliting"]
 ---
 
 
-[[toc]]
+## 컴포넌트 lazy load
 
----
-
-## 컴포넌트 lazy load 를 위한 code split 적용
-
-- [코드 분할 기법 공식문서](https://ko.reactjs.org/docs/code-splitting.html#reactlazy)
+- [리액트 공식문서](https://ko.reactjs.org/docs/code-splitting.html#route-based-code-splitting)
 
 
-현재 화면에 존재하지 않는 이미지라던가, footer 영역등의 청크파일 등등 현재 페이지에서 필요없는 리소스들도 존재합니다.
+현재 화면에 존재하지 않는 이미지라던가(above the fold),   
+footer 영역등의 청크파일 등등 현재 페이지에서 필요없는 리소스들도 존재합니다.
 즉 미리 로드될 필요가 없는 파일들을 분리해서 전송받아 로드하는 전략으로
 `파일 용량을 감소`시켜  `로딩속도를 개선`할 수 있습니다.
 
 <br/>
-React 나 vue 환경에서는 라우터를 구성하는 파일에 적용합니다.
+코드를 필요에 따라 로드하거나
+라우트시에 (페이지 이동시) 필요한 컴포넌트를 로드하는 방식을 택할 수도 있습니다. 
 Next 환경에서는 dynamic 기능을 이용할 수 있고, react-lazy-hydration 라는 모듈도 제공합니다.
 
 ```js {4-7}
-
 // router/index.jsx
 
 // 라우트 설정에서 리액트에서 제공하는 lazy 함수로 컴포넌트를 등록
