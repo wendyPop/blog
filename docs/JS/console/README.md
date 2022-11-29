@@ -1,5 +1,5 @@
 ---
-title: 개발자로서 개발자도구 console 활용하기
+title: 개발자도구 console 활용하기
 meta:
 - name: description
   content:  개발자로서 개발자도구 console 활용하기
@@ -14,13 +14,15 @@ meta:
 
 ## console 활용
 
+디버깅을 위해 자주 사용하는 console 객체에 대해서 정리하고, 실무에서 좀 더 빠른 디버깅을 위한 학습을 해봅시다.
 콘솔 객체를 뒤져보면 자주쓰이는 log 메서드부터 외에도 다양한 메서드가 보입니다. 
 
 ![before](~@source/.vuepress/assets/img/js/console/consoleObj.png)
 
 <br/>
 
-자주 사용하는 메서드  
+자주 사용하는 메소드는 console.log 나 console.error 지만
+활용하기 좋아보이는 메소드가 많이 보입니다. 
 - console.log()  
 - console.warn()  
 - console.error()    
@@ -28,7 +30,7 @@ meta:
 - console.dir()    
 - console.clear()  
 
-낯설지만 우리가 활용하면 좋은 속성과 메서드들도 많습니다.  
+외에도 많은 메소드가 많이 있습니다.
 - console.count()  
 - console.countReset()  
 - console.time()  
@@ -46,8 +48,10 @@ meta:
 ---
 
 
-### 1 컬러로 찍기
-프로덕션 개발 시 강조하고 싶은 내용을 주로 컬러 로그를 찍어서 활용할 수 있습니다.
+### 1. 색상 주기
+
+컬러주기 
+개발 시 강조하고 싶은 내용을 컬러 로그를 찍어서 활용할 수 있습니다.
 ```shell
 console.log('%c 중요한 내용', 'color:red')  
 console.log('%c hi green content', 'color:green')
@@ -59,28 +63,28 @@ console.log('%c hi green content', 'color:green')
 <br />
 <br />
 
-### 2 치환하기
+### 2. 치환하기
 ```shell
 let a = 1
 let b = 'hello'
 console.log('%d는 숫자 %s는 문자열', a, b)
 console.log(`${a}는 숫자 ${b}는 문자열`)
+
+// 하지만 실무에서는 위 탬플릿리터널이나 아래처럼 사용합니다.
 console.log(a + '는 숫자 ', b + '는 문자열')
 ```
 결과  
 <img src="~@source/.vuepress/assets/img/js/console/converting.png" width="500">
 
 여러가지 값을 함께 로그를 찍을때는 `탬플릿 리터럴`이나 숫자`%d`,문자`%s`를 구분해서 치환해준다던가
-`,(콤마)`를 이용해서 로그를 찍기도 합니다.
+`,(콤마)`를 이용해서 로그를 찍을 수도 있네요.
 
 <br />
 <br />
 
 
-### 3 함수나 변수의 호출 횟수를 알고싶을때 count
-사용자화를 위하여 (마케팅용 데이터 수집과 사용자 관심도 측정) 데이터를 수집할 때 
-많이 사용합니다.
-사용자가 배너 클릭하는 횟수등을 카운팅하는 용도로 주로 활용했던 것 같습니다.
+### 3. 함수나 변수의 호출 횟수를 알고싶을때 count
+배너 클릭하는 횟수등을 카운팅하는 용도로 주로 활용했던 것 같습니다.
 
 ```js
 function someFunc() { return true }
@@ -211,3 +215,4 @@ foo();
 결과  
 <img src="~@source/.vuepress/assets/img/js/console/callStack.png" width="300">
 
+참고자료 - [MDN](https://developer.mozilla.org/ko/docs/Web/API/console#%ED%83%80%EC%9D%B4%EB%A8%B8)
