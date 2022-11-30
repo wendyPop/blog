@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[18],{307:function(n,t,e){"use strict";e.r(t);var o={components:{ParentLayout:e(305).a}},a=e(13),u=Object(a.a)(o,(function(){var n=this._self._c;return n("ParentLayout",[n("Content")],1)}),[],!1,null,"c1e9910e",null);t.default=u.exports}}]);

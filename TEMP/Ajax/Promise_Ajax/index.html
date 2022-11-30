@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Ajax + Promise | 개발로그</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-C43W54E093"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-C43W54E093');</script>
+    <meta name="description" content="Ajax + Promise, javascript, callback, async await, axios">
+    <meta property="og:title" content="Ajax + Promise, javascript, callback, async await, axios">
+    <meta property="og:description" content="Ajax + Promise, javascript, callback, async await, axios">
+    <meta property="og:url" content="https://kyounghwan01.github.io/blog/JS/Ajax/Promise_Ajax/">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.8d61e5b9.css" as="style"><link rel="preload" href="/blog/assets/js/app.598b797b.js" as="script"><link rel="preload" href="/blog/assets/js/18.22019e13.js" as="script"><link rel="preload" href="/blog/assets/js/2.77406796.js" as="script"><link rel="preload" href="/blog/assets/js/28.207d98b9.js" as="script"><link rel="preload" href="/blog/assets/js/17.8d4a13e7.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.1bf7fbc0.js"><link rel="prefetch" href="/blog/assets/js/11.70bf52e9.js"><link rel="prefetch" href="/blog/assets/js/12.a43fcbde.js"><link rel="prefetch" href="/blog/assets/js/13.47eb3c0b.js"><link rel="prefetch" href="/blog/assets/js/14.74548f6c.js"><link rel="prefetch" href="/blog/assets/js/15.b5df445e.js"><link rel="prefetch" href="/blog/assets/js/16.2da6ba90.js"><link rel="prefetch" href="/blog/assets/js/19.a7bcae20.js"><link rel="prefetch" href="/blog/assets/js/20.42aeecb3.js"><link rel="prefetch" href="/blog/assets/js/21.a0734284.js"><link rel="prefetch" href="/blog/assets/js/22.63fb8265.js"><link rel="prefetch" href="/blog/assets/js/23.76bc34c0.js"><link rel="prefetch" href="/blog/assets/js/24.3b6deb67.js"><link rel="prefetch" href="/blog/assets/js/25.1c448fdd.js"><link rel="prefetch" href="/blog/assets/js/26.d376ca44.js"><link rel="prefetch" href="/blog/assets/js/27.3d26dfaa.js"><link rel="prefetch" href="/blog/assets/js/29.39c4039c.js"><link rel="prefetch" href="/blog/assets/js/3.e64b9147.js"><link rel="prefetch" href="/blog/assets/js/30.eccf2cba.js"><link rel="prefetch" href="/blog/assets/js/31.ac838fdb.js"><link rel="prefetch" href="/blog/assets/js/32.3f65c2f4.js"><link rel="prefetch" href="/blog/assets/js/33.1b9f105d.js"><link rel="prefetch" href="/blog/assets/js/34.42e4dc3e.js"><link rel="prefetch" href="/blog/assets/js/4.81e4e6d1.js"><link rel="prefetch" href="/blog/assets/js/5.731c729c.js"><link rel="prefetch" href="/blog/assets/js/6.79beabb6.js"><link rel="prefetch" href="/blog/assets/js/7.4bd3e06c.js"><link rel="prefetch" href="/blog/assets/js/8.59cbf34e.js"><link rel="prefetch" href="/blog/assets/js/9.524babeb.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.8d61e5b9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-c1e9910e><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">개발로그</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/blog/UI/" class="nav-link">
+  UI
+</a></div><div class="nav-item"><a href="/blog/CSS/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/blog/JS/" class="nav-link">
+  JS
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/blog/UI/" class="nav-link">
+  UI
+</a></div><div class="nav-item"><a href="/blog/CSS/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/blog/JS/" class="nav-link">
+  JS
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="ajax-promise"><a href="#ajax-promise" class="header-anchor">#</a> Ajax + Promise</h1> <h2 id="_1-해커뉴스-api를-통해-id-key값-받아오기"><a href="#_1-해커뉴스-api를-통해-id-key값-받아오기" class="header-anchor">#</a> 1. 해커뉴스 api를 통해 id(key값) 받아오기</h2> <blockquote><p>promise를 사용하여 순차적으로 과정이 이루어지게 합니다.
+그 첫번째로 id가 필요하므로 id를 가져오고 맨 하단의 구문으로 data가 비동기로 잘 가져오는지 확인합니다.</p></blockquote> <ul><li>아래는 id를 가져오는 코드입니다.</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> hackerIdURL <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> newsId<span class="token punctuation">;</span>
+<span class="token keyword">let</span> newsData <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+Promise<span class="token punctuation">.</span><span class="token function-variable function">request1</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span> hackerIdURL<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    xhr<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        newsId <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>responseText<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span>newsId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">&quot;request1 Error: &quot;</span> <span class="token operator">+</span> xhr<span class="token punctuation">.</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    xhr<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+Promise<span class="token punctuation">.</span><span class="token function">request1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">data</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="_2-id를-통해-render될-자료를-비동기로-받아와서-console에-id에-해당하는-정보-가져오기"><a href="#_2-id를-통해-render될-자료를-비동기로-받아와서-console에-id에-해당하는-정보-가져오기" class="header-anchor">#</a> 2. id를 통해 render될 자료를 비동기로 받아와서 console에 id에 해당하는 정보 가져오기</h2> <blockquote><p>1번 과정에서 가져온 id를 requset2함수의 인자로 넣어서 해당 id에 맞게 자료를 가져와서 <code>newsData</code>에 넣습니다. 비동기적으로 이루어져야 하니 함수를 이용하여 스코프를 만들고 배열이 완성되기 전까지 <code>resolve</code> 가 되지 않도록 합니다.</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code>Promise<span class="token punctuation">.</span><span class="token function-variable function">request2</span> <span class="token operator">=</span> <span class="token parameter">param</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">function</span> <span class="token function">cb</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">30</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>
+          <span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span>
+          <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">https://hacker-news.firebaseio.com/v0/item/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>param<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.json?print=pretty</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+          <span class="token boolean">true</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        xhr<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            newsData<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>responseText<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            i<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token function">cb</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">&quot;request2 Error: &quot;</span> <span class="token operator">+</span> xhr<span class="token punctuation">.</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        xhr<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span>newsData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">cb</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><blockquote><p>완성됬다면 promise pending 후에 <code>userData</code> 가 console에 찍히게 됩니다.</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code>Promise<span class="token punctuation">.</span><span class="token function">request1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">data</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  Promise<span class="token punctuation">.</span><span class="token function">request2</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">userData</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>userData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><TagLinks></TagLinks> <div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">10/6/2022, 12:40:33 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.598b797b.js" defer></script><script src="/blog/assets/js/18.22019e13.js" defer></script><script src="/blog/assets/js/2.77406796.js" defer></script><script src="/blog/assets/js/28.207d98b9.js" defer></script><script src="/blog/assets/js/17.8d4a13e7.js" defer></script>
+  </body>
+</html>

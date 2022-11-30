@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>밀리세컨드 변환하기 | 개발로그</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-C43W54E093"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-C43W54E093');</script>
+    <meta name="description" content="개발자로서 개발자도구 console 활용하기">
+    <meta property="og:title" content="개발자로서 개발자도구 console 활용하기">
+    <meta property="og:description" content="개발자로서 개발자도구 console 활용하기">
+    <meta property="og:url" content="https://wendypop.github.io/blog/JS/console" tags="console,chrome,dev-tools,console.log">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.8d61e5b9.css" as="style"><link rel="preload" href="/blog/assets/js/app.598b797b.js" as="script"><link rel="preload" href="/blog/assets/js/18.22019e13.js" as="script"><link rel="preload" href="/blog/assets/js/2.77406796.js" as="script"><link rel="preload" href="/blog/assets/js/14.74548f6c.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.1bf7fbc0.js"><link rel="prefetch" href="/blog/assets/js/11.70bf52e9.js"><link rel="prefetch" href="/blog/assets/js/12.a43fcbde.js"><link rel="prefetch" href="/blog/assets/js/13.47eb3c0b.js"><link rel="prefetch" href="/blog/assets/js/15.b5df445e.js"><link rel="prefetch" href="/blog/assets/js/16.2da6ba90.js"><link rel="prefetch" href="/blog/assets/js/17.8d4a13e7.js"><link rel="prefetch" href="/blog/assets/js/19.a7bcae20.js"><link rel="prefetch" href="/blog/assets/js/20.42aeecb3.js"><link rel="prefetch" href="/blog/assets/js/21.a0734284.js"><link rel="prefetch" href="/blog/assets/js/22.63fb8265.js"><link rel="prefetch" href="/blog/assets/js/23.76bc34c0.js"><link rel="prefetch" href="/blog/assets/js/24.3b6deb67.js"><link rel="prefetch" href="/blog/assets/js/25.1c448fdd.js"><link rel="prefetch" href="/blog/assets/js/26.d376ca44.js"><link rel="prefetch" href="/blog/assets/js/27.3d26dfaa.js"><link rel="prefetch" href="/blog/assets/js/28.207d98b9.js"><link rel="prefetch" href="/blog/assets/js/29.39c4039c.js"><link rel="prefetch" href="/blog/assets/js/3.e64b9147.js"><link rel="prefetch" href="/blog/assets/js/30.eccf2cba.js"><link rel="prefetch" href="/blog/assets/js/31.ac838fdb.js"><link rel="prefetch" href="/blog/assets/js/32.3f65c2f4.js"><link rel="prefetch" href="/blog/assets/js/33.1b9f105d.js"><link rel="prefetch" href="/blog/assets/js/34.42e4dc3e.js"><link rel="prefetch" href="/blog/assets/js/4.81e4e6d1.js"><link rel="prefetch" href="/blog/assets/js/5.731c729c.js"><link rel="prefetch" href="/blog/assets/js/6.79beabb6.js"><link rel="prefetch" href="/blog/assets/js/7.4bd3e06c.js"><link rel="prefetch" href="/blog/assets/js/8.59cbf34e.js"><link rel="prefetch" href="/blog/assets/js/9.524babeb.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.8d61e5b9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-c1e9910e><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">개발로그</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/blog/UI/" class="nav-link">
+  UI
+</a></div><div class="nav-item"><a href="/blog/CSS/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/blog/JS/" class="nav-link router-link-active">
+  JS
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/blog/UI/" class="nav-link">
+  UI
+</a></div><div class="nav-item"><a href="/blog/CSS/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/blog/JS/" class="nav-link router-link-active">
+  JS
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/JS/" aria-current="page" class="sidebar-link">JS 로그</a></li><li><a href="/blog/JS/console/" class="sidebar-link">개발자도구 console 활용하기</a></li><li><a href="/blog/JS/timeHandle/" aria-current="page" class="active sidebar-link">밀리세컨드 변환하기</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/JS/timeHandle/#밀리세컨드-변환" class="sidebar-link">밀리세컨드 변환</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="밀리세컨드-변환"><a href="#밀리세컨드-변환" class="header-anchor">#</a> 밀리세컨드 변환</h2> <img src="/blog/assets/img/milliSeconds.25bf4ba7.png" width="500"> <p>new Date() 로 나오는 값은
+밀리세컨드</p> <p>천분의 1초를 가리킴
+1000ms == 1초 == 1sec</p> <ol><li>시 ( Hours ) 표현:</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">(</span> ms <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">1000</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span><span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">24</span>
+</code></pre></div><ol start="2"><li>분 ( Minutes ) 표현 :</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">(</span> ms <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">1000</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">60</span> 
+</code></pre></div><ol start="3"><li>초로 ( Seconds ) 표현 :</li></ol> <div class="language-js extra-class"><div class="highlight-lines"><br><br><br><br><br><div class="highlighted"> </div><br></div><pre class="language-js"><code><span class="token keyword">let</span> startTime <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 몇 초뒤</span>
+<span class="token keyword">let</span> endTime <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTIme</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> ms <span class="token operator">=</span> endTime <span class="token operator">-</span> startTime<span class="token punctuation">;</span> <span class="token comment">// ms : 6400</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">(</span> ms <span class="token operator">/</span> <span class="token number">1000</span> <span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token comment">// 6.4 초</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">11/29/2022, 9:11:26 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/JS/console/" class="prev">
+        개발자도구 console 활용하기
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.598b797b.js" defer></script><script src="/blog/assets/js/18.22019e13.js" defer></script><script src="/blog/assets/js/2.77406796.js" defer></script><script src="/blog/assets/js/14.74548f6c.js" defer></script>
+  </body>
+</html>

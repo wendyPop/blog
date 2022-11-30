@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>컴포넌트 lazy load | 개발로그</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-C43W54E093"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-C43W54E093');</script>
+    <meta name="description" content="webpack bundle analyzer">
+    <meta property="og:title" content="웹팩 코드 분할">
+    <meta property="og:description" content="리액트 웹팩 코드 분할">
+    <meta property="og:url" content="https://wendypop.github.io/blog/React/webpack-bundle-analyze/" tags="react,wpo,lazy-load,webpack-bundle-analyzer,code-split,code-spliting">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.8d61e5b9.css" as="style"><link rel="preload" href="/blog/assets/js/app.598b797b.js" as="script"><link rel="preload" href="/blog/assets/js/18.22019e13.js" as="script"><link rel="preload" href="/blog/assets/js/2.77406796.js" as="script"><link rel="preload" href="/blog/assets/js/12.a43fcbde.js" as="script"><link rel="preload" href="/blog/assets/js/17.8d4a13e7.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.1bf7fbc0.js"><link rel="prefetch" href="/blog/assets/js/11.70bf52e9.js"><link rel="prefetch" href="/blog/assets/js/13.47eb3c0b.js"><link rel="prefetch" href="/blog/assets/js/14.74548f6c.js"><link rel="prefetch" href="/blog/assets/js/15.b5df445e.js"><link rel="prefetch" href="/blog/assets/js/16.2da6ba90.js"><link rel="prefetch" href="/blog/assets/js/19.a7bcae20.js"><link rel="prefetch" href="/blog/assets/js/20.42aeecb3.js"><link rel="prefetch" href="/blog/assets/js/21.a0734284.js"><link rel="prefetch" href="/blog/assets/js/22.63fb8265.js"><link rel="prefetch" href="/blog/assets/js/23.76bc34c0.js"><link rel="prefetch" href="/blog/assets/js/24.3b6deb67.js"><link rel="prefetch" href="/blog/assets/js/25.1c448fdd.js"><link rel="prefetch" href="/blog/assets/js/26.d376ca44.js"><link rel="prefetch" href="/blog/assets/js/27.3d26dfaa.js"><link rel="prefetch" href="/blog/assets/js/28.207d98b9.js"><link rel="prefetch" href="/blog/assets/js/29.39c4039c.js"><link rel="prefetch" href="/blog/assets/js/3.e64b9147.js"><link rel="prefetch" href="/blog/assets/js/30.eccf2cba.js"><link rel="prefetch" href="/blog/assets/js/31.ac838fdb.js"><link rel="prefetch" href="/blog/assets/js/32.3f65c2f4.js"><link rel="prefetch" href="/blog/assets/js/33.1b9f105d.js"><link rel="prefetch" href="/blog/assets/js/34.42e4dc3e.js"><link rel="prefetch" href="/blog/assets/js/4.81e4e6d1.js"><link rel="prefetch" href="/blog/assets/js/5.731c729c.js"><link rel="prefetch" href="/blog/assets/js/6.79beabb6.js"><link rel="prefetch" href="/blog/assets/js/7.4bd3e06c.js"><link rel="prefetch" href="/blog/assets/js/8.59cbf34e.js"><link rel="prefetch" href="/blog/assets/js/9.524babeb.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.8d61e5b9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-c1e9910e><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">개발로그</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/React/" class="nav-link router-link-active">
+  React
+</a></div><div class="nav-item"><a href="/blog/UI/" class="nav-link">
+  UI
+</a></div><div class="nav-item"><a href="/blog/CSS/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/blog/JS/" class="nav-link">
+  JS
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/React/" class="nav-link router-link-active">
+  React
+</a></div><div class="nav-item"><a href="/blog/UI/" class="nav-link">
+  UI
+</a></div><div class="nav-item"><a href="/blog/CSS/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/blog/JS/" class="nav-link">
+  JS
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/React/" aria-current="page" class="sidebar-link">리액트 개발 로그</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>react-core</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/React/react-core/immutable/" class="sidebar-link">불변성을 유지하며 state 핸들링하기</a></li><li><a href="/blog/React/react-core/webpack-bundle-analyze/" aria-current="page" class="active sidebar-link">컴포넌트 lazy load</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/React/react-core/webpack-bundle-analyze/#컴포넌트-lazy-load" class="sidebar-link">컴포넌트 lazy load</a></li><li class="sidebar-sub-header"><a href="/blog/React/react-core/webpack-bundle-analyze/#성능-개선-확인" class="sidebar-link">성능 개선 확인</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="컴포넌트-lazy-load"><a href="#컴포넌트-lazy-load" class="header-anchor">#</a> 컴포넌트 lazy load</h2> <ul><li><a href="https://ko.reactjs.org/docs/code-splitting.html#route-based-code-splitting" target="_blank" rel="noopener noreferrer">리액트 공식문서<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <p>현재 화면에 존재하지 않는 이미지라던가(above the fold),<br>
+footer 영역등의 청크파일 등등 현재 페이지에서 필요없는 리소스들도 존재합니다.
+즉 미리 로드될 필요가 없는 파일들을 분리해서 전송받아 로드하는 전략으로
+<code>파일 용량을 감소</code>시켜  <code>로딩속도를 개선</code>할 수 있습니다.</p> <br>
+코드를 필요에 따라 로드하거나
+라우트시에 (페이지 이동시) 필요한 컴포넌트를 로드하는 방식을 택할 수도 있습니다. 
+Next 환경에서는 dynamic 기능을 이용할 수 있고, react-lazy-hydration 라는 모듈도 제공합니다.
+<div class="language-js extra-class"><div class="highlight-lines"><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-js"><code><span class="token comment">// router/index.jsx</span>
+
+<span class="token comment">// 라우트 설정에서 리액트에서 제공하는 lazy 함수로 컴포넌트를 등록</span>
+<span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> lazy <span class="token punctuation">}</span>  <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">const</span> Main <span class="token operator">=</span> <span class="token function">lazy</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'pages/main'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> User <span class="token operator">=</span> <span class="token function">lazy</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'pages/usePage'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">...</span>
+
+<span class="token keyword">return</span> <span class="token function">useRoutes</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token literal-property property">element</span><span class="token operator">:</span> <span class="token operator">&lt;</span>Layout <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">children</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token literal-property property">element</span><span class="token operator">:</span> <span class="token operator">&lt;</span>Main <span class="token operator">/</span><span class="token operator">&gt;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/user'</span><span class="token punctuation">,</span> <span class="token literal-property property">element</span><span class="token operator">:</span> <span class="token operator">&lt;</span>User <span class="token operator">/</span><span class="token operator">&gt;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token comment">// ...</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+</code></pre></div><p>로딩이 늦어질 경우를 대비한 대체 화면도 준비
+레이아웃을 구성하는 프레임에 fallback 적용</p> <div class="language-js extra-class"><div class="highlight-lines"><br><div class="highlighted"> </div><br><br><div class="highlighted"> </div><div class="highlighted"> </div><br><div class="highlighted"> </div><br><br></div><pre class="language-js"><code><span class="token comment">// layout.jsx</span>
+<span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> Suspense <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
+
+<span class="token operator">&lt;</span>main<span class="token operator">&gt;</span>
+    <span class="token punctuation">{</span><span class="token comment">/* 컴포넌트가 로드되지 않았을 경우에 로드될 suspense fallback 컴포넌트도 추가한다. */</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>Suspense fallback<span class="token operator">=</span><span class="token punctuation">{</span><span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>Loading<span class="token operator">...</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Outlet <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>Suspense<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>main<span class="token operator">&gt;</span>
+</code></pre></div><br> <br> <h2 id="성능-개선-확인"><a href="#성능-개선-확인" class="header-anchor">#</a> 성능 개선 확인</h2> <h3 id="브라우저로-확인"><a href="#브라우저로-확인" class="header-anchor">#</a> 브라우저로 확인</h3> <p>브라우저 개발자도구 네트워크 탭에서 어떤 변화가 있는지 확인해봅니다.</p> <p>⬇️ 적용 전<br>
+하나의 bundle.js 파일을 다운로드하는 시간이 가장 오래 소요되었고 용량도 2.1MB나 됩니다.</p> <p><img src="/blog/assets/img/code-spliting-before.0385dfce.png" alt="before"></p> <br> <p>⬇️ 적용 후<br>
+적용 후 용량이 2.1MB 에서 1.1MB로 무려 1MB나 감소했으며
+다운로드해야할 파일의 용량은 줄고 다운로드 속도는 더 빨라졌습니다.
+<img src="/blog/assets/img/code-spliting-after.1239b997.png" alt="after"></p> <br> <br> <h3 id="webpack-bundle-analyzer-로-bundle-파일의-사이즈-시각적으로-확인하기"><a href="#webpack-bundle-analyzer-로-bundle-파일의-사이즈-시각적으로-확인하기" class="header-anchor">#</a> webpack-bundle-analyzer 로 bundle 파일의 사이즈 시각적으로 확인하기</h3> <p><code>webpack-bundle-analyzer</code> 로 개별로 번들링된 번들 파일의 사이즈를 확인해봅니다.</p> <br> <p>먼저 프로젝트에 <code>webpack-bundle-analyzer</code> 를 설치합니다.
+개발 단계에서만 필요한 모듈이므로 <code>-D</code> 또는 <code>--save-dev</code> 옵션으로 개발용으로 설치합니다.</p> <div class="language-shell extra-class"><pre class="language-shell"><code>$ <span class="token function">npm</span> <span class="token function">install</span> -D webpack-bundle-analyzer
+</code></pre></div><br> <p>CRA 의 경우 <code>cra-bundle-analyzer</code> 도 설치해야 합니다.</p> <div class="language-shell extra-class"><pre class="language-shell"><code>$ <span class="token function">npm</span> <span class="token function">install</span> -D cra-bundle-analyzer
+</code></pre></div> <br> <p>아래 커맨드로 실행하면 /build/report.html 가 static 파일로 생성되고 브라우저에서 자동 실행됩니다.</p> <div class="language-shell extra-class"><pre class="language-shell"><code>$ npx cra-bundle-analyzer
+</code></pre></div><p>⬇️ 적용 후<br> <img src="https://i.ibb.co/6wLsK3F/bundled-before.png" alt="bundle_before">
+하나의 큰 덩어리로 번들된 index.js가 보입니다.</p> <p>⬇️ 적용 후<br> <img src="https://i.ibb.co/Lv7WqyN/bundled-after.png" alt="bundle_after">
+우측의 작은 파란 박스들은 각 페이지별로 chunk 된 번들 파일로서
+각 페이지별로 차지하는 요소 용량만큼 번들링 된 것을 볼 수 있습니다.
+웹팩이 제공하는 리포트로 확인 가능하다.</p> <div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">10/29/2022, 2:59:02 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/React/react-core/immutable/" class="prev">
+        불변성을 유지하며 state 핸들링하기
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.598b797b.js" defer></script><script src="/blog/assets/js/18.22019e13.js" defer></script><script src="/blog/assets/js/2.77406796.js" defer></script><script src="/blog/assets/js/12.a43fcbde.js" defer></script><script src="/blog/assets/js/17.8d4a13e7.js" defer></script>
+  </body>
+</html>

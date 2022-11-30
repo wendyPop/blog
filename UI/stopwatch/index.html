@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>스톱 워치 | 개발로그</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-C43W54E093"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-C43W54E093');</script>
+    <meta name="description" content="make stop watch">
+    <meta property="og:title" content="stop watch">
+    <meta property="og:url" content="https://wendypop.github.io/blog/UI/stopwatch/" tags="components,ui-component,stop-watch">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.8d61e5b9.css" as="style"><link rel="preload" href="/blog/assets/js/app.598b797b.js" as="script"><link rel="preload" href="/blog/assets/js/18.22019e13.js" as="script"><link rel="preload" href="/blog/assets/js/2.77406796.js" as="script"><link rel="preload" href="/blog/assets/js/31.ac838fdb.js" as="script"><link rel="preload" href="/blog/assets/js/7.4bd3e06c.js" as="script"><link rel="preload" href="/blog/assets/js/17.8d4a13e7.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.1bf7fbc0.js"><link rel="prefetch" href="/blog/assets/js/11.70bf52e9.js"><link rel="prefetch" href="/blog/assets/js/12.a43fcbde.js"><link rel="prefetch" href="/blog/assets/js/13.47eb3c0b.js"><link rel="prefetch" href="/blog/assets/js/14.74548f6c.js"><link rel="prefetch" href="/blog/assets/js/15.b5df445e.js"><link rel="prefetch" href="/blog/assets/js/16.2da6ba90.js"><link rel="prefetch" href="/blog/assets/js/19.a7bcae20.js"><link rel="prefetch" href="/blog/assets/js/20.42aeecb3.js"><link rel="prefetch" href="/blog/assets/js/21.a0734284.js"><link rel="prefetch" href="/blog/assets/js/22.63fb8265.js"><link rel="prefetch" href="/blog/assets/js/23.76bc34c0.js"><link rel="prefetch" href="/blog/assets/js/24.3b6deb67.js"><link rel="prefetch" href="/blog/assets/js/25.1c448fdd.js"><link rel="prefetch" href="/blog/assets/js/26.d376ca44.js"><link rel="prefetch" href="/blog/assets/js/27.3d26dfaa.js"><link rel="prefetch" href="/blog/assets/js/28.207d98b9.js"><link rel="prefetch" href="/blog/assets/js/29.39c4039c.js"><link rel="prefetch" href="/blog/assets/js/3.e64b9147.js"><link rel="prefetch" href="/blog/assets/js/30.eccf2cba.js"><link rel="prefetch" href="/blog/assets/js/32.3f65c2f4.js"><link rel="prefetch" href="/blog/assets/js/33.1b9f105d.js"><link rel="prefetch" href="/blog/assets/js/34.42e4dc3e.js"><link rel="prefetch" href="/blog/assets/js/4.81e4e6d1.js"><link rel="prefetch" href="/blog/assets/js/5.731c729c.js"><link rel="prefetch" href="/blog/assets/js/6.79beabb6.js"><link rel="prefetch" href="/blog/assets/js/8.59cbf34e.js"><link rel="prefetch" href="/blog/assets/js/9.524babeb.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.8d61e5b9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-c1e9910e><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">개발로그</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/blog/UI/" class="nav-link router-link-active">
+  UI
+</a></div><div class="nav-item"><a href="/blog/CSS/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/blog/JS/" class="nav-link">
+  JS
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/blog/UI/" class="nav-link router-link-active">
+  UI
+</a></div><div class="nav-item"><a href="/blog/CSS/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/blog/JS/" class="nav-link">
+  JS
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/UI/" aria-current="page" class="sidebar-link">ui 요소 만들기</a></li><li><a href="/blog/UI/calculator/" class="sidebar-link">계산기 with keyboard event</a></li><li><a href="/blog/UI/calendar/" class="sidebar-link">달력</a></li><li><a href="/blog/UI/musicPlayer/" class="sidebar-link">뮤직 플레이어</a></li><li><a href="/blog/UI/stopwatch/" aria-current="page" class="active sidebar-link">스톱 워치</a><ul class="sidebar-sub-headers"></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><div class="body flex" data-v-e4ba739c><div class="container flex" data-v-e4ba739c><div class="stopwatch flex" data-v-e4ba739c><h1 data-v-e4ba739c>STOP WATCH</h1> <div class="circle flex" data-v-e4ba739c><span id="display" class="time" data-v-e4ba739c>00:00:00</span></div></div></div> <div class="controls" data-v-e4ba739c><button class="buttonPlay" data-v-e4ba739c><span id="playButton" data-v-e4ba739c>▶️</span></button> <button class="buttonPlay" data-v-e4ba739c><span id="pauseButton" data-v-e4ba739c>⏸</span></button> <button class="buttonReset" data-v-e4ba739c><span id="resetButton" data-v-e4ba739c>🔁</span></button></div></div> <blockquote><p>아래 코드는 <u>프레임워크 없이 html, css, javascript 구현물</u>입니다.
+<br>
+vue 나 react 등에 적용하고 싶다면, 상황에 맞게 적용하면 ok !
+<br></p></blockquote> <h4 id="스탑워치를-구현할-때-필요한-api"><a href="#스탑워치를-구현할-때-필요한-api" class="header-anchor">#</a> 스탑워치를 구현할 때 필요한 API</h4> <ul><li>Date</li> <li>타이머 ( setInterval, clearInterval )</li> <li>event ( addEventListener )</li></ul> <h3 id="간단-로직"><a href="#간단-로직" class="header-anchor">#</a> 간단 로직</h3> <div class="language-plain extra-class"><pre class="language-plain"><code>1. 대기
+2. 사용자가 시작버튼(▶) 을 누른다.
+3. 1초마다 카운트업한다.
+4. 3번을 반복
+(e) 사용자가 일시정지(⏸)버튼을 누르면 타이머가 멈춘다.
+(e) 사용자가 초기화(🔁)버튼을 누르면 타이머가 0초로 초기화되고 1번 대기상태가 된다.
+</code></pre></div><div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!--index.html--&gt;</span>
+
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>X-UA-Compatible<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>IE-edge<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>width=device-width, initial-scale=1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>STOP WATCH<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!-- 오랜만에 외부 파일로 순수 css 파일 로드 --&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>stylesheet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>style.css<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+        <span class="token comment">&lt;!--바닐라 스크립트 버전에는 font-awesome 아이콘 사용--&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>stylesheet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>flex<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>container flex<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>stopwatch flex<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>STOP WATCH<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>circle flex<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                    <span class="token comment">&lt;!--숫자 표시--&gt;</span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>time<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>display<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>00:00:00<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>controls<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token comment">&lt;!--시작 버튼--&gt;</span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>buttonPlay<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>fa-solid fa-play<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>playButton<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+            <span class="token comment">&lt;!--일시정지 버튼--&gt;</span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>buttonPlay<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>fa-solid fa-circle-pause<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>pauseButton<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+            <span class="token comment">&lt;!--초기화 버튼--&gt;</span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>buttonReset<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>fa-solid fa-shuffle<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>resetButton<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+        <span class="token comment">&lt;!-- 랜터 트리 구성에 방해되지 않도록 스크립트는 나중 처리 --&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>script.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* style.css */</span>
+<span class="token selector">body</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100vh<span class="token punctuation">;</span>
+    <span class="token property">margin-top</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.flex</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+    <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.container</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.stopwatch</span> <span class="token punctuation">{</span>
+    <span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.stopwatch h1</span> <span class="token punctuation">{</span>
+    <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">&quot;American Typewriter&quot;</span><span class="token punctuation">,</span> serif<span class="token punctuation">;</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+    <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>
+    <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.circle</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 240px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 240px<span class="token punctuation">;</span>
+    <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token property">box-shadow</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>50<span class="token punctuation">,</span> 50<span class="token punctuation">,</span> 93<span class="token punctuation">,</span> 0.25<span class="token punctuation">)</span>
+        0 50px 100px -20px<span class="token punctuation">,</span>
+            <span class="token function">rgba</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0.3<span class="token punctuation">)</span>
+            0 30px 60px -30px<span class="token punctuation">,</span>
+            <span class="token function">rgba</span><span class="token punctuation">(</span>10<span class="token punctuation">,</span> 37<span class="token punctuation">,</span> 64<span class="token punctuation">,</span> 0.35<span class="token punctuation">)</span>
+                0 -2px 6px 0 inset<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.circle span</span> <span class="token punctuation">{</span>
+    <span class="token property">font-weight</span><span class="token punctuation">:</span> lighter<span class="token punctuation">;</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+    <span class="token property">line-height</span><span class="token punctuation">:</span> 240px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.controls button</span> <span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+    <span class="token property">outline</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.controls button i</span> <span class="token punctuation">{</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 0 20px<span class="token punctuation">;</span>
+    <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.controls</span> <span class="token punctuation">{</span>
+    <span class="token property">margin-top</span><span class="token punctuation">:</span> 50px
+<span class="token punctuation">}</span>
+<span class="token comment">/* 나중에 스크립트로 핸들링할 버튼요소*/</span>
+<span class="token selector">#playButton</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">#pauseButton</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@media</span> <span class="token keyword">only</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 600px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+    <span class="token selector">body</span> <span class="token punctuation">{</span>
+        <span class="token property">margin-top</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// script.js</span>
+
+<span class="token comment">// 타이머에 필요한 값 모음  </span>
+<span class="token keyword">let</span> startTime
+<span class="token keyword">let</span> elapsedTime <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">let</span> timerInterval
+
+<span class="token comment">// 주요 부분</span>
+<span class="token comment">// 시작버튼(▶) 클릭</span>
+<span class="token keyword">const</span> <span class="token function-variable function">start</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  startTime <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> elapsedTime
+  timerInterval <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">printTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    elapsedTime <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> startTime
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token function">timeToString</span><span class="token punctuation">(</span>elapsedTime<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+  <span class="token function">showButton</span><span class="token punctuation">(</span><span class="token string">'PAUSE'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 일시정지(⏸)버튼 클릭</span>
+<span class="token keyword">const</span> <span class="token function-variable function">pause</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">clearInterval</span><span class="token punctuation">(</span>timerInterval<span class="token punctuation">)</span>
+  <span class="token function">showButton</span><span class="token punctuation">(</span><span class="token string">'PLAY'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 초기화(🔁)버튼 클릭</span>
+<span class="token keyword">const</span> <span class="token function-variable function">reset</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">clearInterval</span><span class="token punctuation">(</span>timerInterval<span class="token punctuation">)</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'00:00:00'</span><span class="token punctuation">)</span>
+  elapsedTime <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token function">showButton</span><span class="token punctuation">(</span><span class="token string">'PLAY'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 화면 요소에 이벤트 핸들러 부착</span>
+<span class="token keyword">let</span> playButton <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'playButton'</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> pauseButton <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'pauseButton'</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> resetButton <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'resetButton'</span><span class="token punctuation">)</span>
+
+playButton<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> start<span class="token punctuation">)</span>
+pauseButton<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> pause<span class="token punctuation">)</span>
+resetButton<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> reset<span class="token punctuation">)</span>
+
+
+<span class="token comment">// 시작 또는 일시정지 버튼 스타일 toggle</span>
+<span class="token keyword">function</span> <span class="token function">showButton</span><span class="token punctuation">(</span> <span class="token parameter">key</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> buttonToShow <span class="token operator">=</span> key <span class="token operator">===</span> <span class="token string">'PLAY'</span> <span class="token operator">?</span> playButton <span class="token operator">:</span> pauseButton
+  <span class="token keyword">const</span> buttonToHide <span class="token operator">=</span> key <span class="token operator">===</span> <span class="token string">'PLAY'</span> <span class="token operator">?</span> pauseButton <span class="token operator">:</span> playButton
+  <span class="token comment">// js에서 style 객체에 여러번 접근하여 스타일 변경을 하는 것 보다 </span>
+  <span class="token comment">// className 속성으로 css 클래스명 제어 방식이 성능면에서 좋습니다.</span>
+  <span class="token comment">// 또한 reflow가 발생하는 display 속성이니 실무에서는 사용시 고민해보세요.</span>
+  buttonToShow<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'block'</span>
+  buttonToHide<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'none'</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 화면에 시간 표시</span>
+<span class="token keyword">function</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token parameter">txt</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'display'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> txt
+<span class="token punctuation">}</span>
+<span class="token comment">// 시간 포맷팅</span>
+<span class="token keyword">function</span> <span class="token function">timeToString</span><span class="token punctuation">(</span><span class="token parameter">time</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> diffInHrs <span class="token operator">=</span> time <span class="token operator">/</span> <span class="token number">3600000</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> hh <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>diffInHrs<span class="token punctuation">)</span>
+
+  <span class="token keyword">let</span> diffInMin <span class="token operator">=</span> <span class="token punctuation">(</span>diffInHrs <span class="token operator">-</span> hh<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">60</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> mm <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>diffInMin<span class="token punctuation">)</span>
+
+  <span class="token keyword">let</span> diffInSec <span class="token operator">=</span> <span class="token punctuation">(</span>diffInMin <span class="token operator">-</span> mm<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">60</span>
+  <span class="token keyword">let</span> ss <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>diffInSec<span class="token punctuation">)</span>
+
+  <span class="token keyword">let</span> diffInMs <span class="token operator">=</span> <span class="token punctuation">(</span>diffInSec <span class="token operator">-</span> ss<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span>
+  <span class="token keyword">let</span> ms <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>diffInMs<span class="token punctuation">)</span>
+
+  <span class="token keyword">let</span> formattedMM <span class="token operator">=</span> mm<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'0'</span><span class="token punctuation">)</span>
+  <span class="token keyword">let</span> formattedSS <span class="token operator">=</span> ss<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'0'</span><span class="token punctuation">)</span>
+  <span class="token keyword">let</span> formattedMS <span class="token operator">=</span> ms<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'0'</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>formattedMM<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> : </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>formattedSS<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> : </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>formattedMS<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span>
+</code></pre></div><div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">10/9/2022, 12:47:15 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/UI/musicPlayer/" class="prev">
+        뮤직 플레이어
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.598b797b.js" defer></script><script src="/blog/assets/js/18.22019e13.js" defer></script><script src="/blog/assets/js/2.77406796.js" defer></script><script src="/blog/assets/js/31.ac838fdb.js" defer></script><script src="/blog/assets/js/7.4bd3e06c.js" defer></script><script src="/blog/assets/js/17.8d4a13e7.js" defer></script>
+  </body>
+</html>
