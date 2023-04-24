@@ -43,9 +43,22 @@ MVC 확장 아키텍쳐
 | Util           | /util     | ~Util        | - 재활용 가능 유틸리티                                                      |범용 코드는 도메인 별로 따로 작성한다.| - 재활용 가능한 유틸리티성 작업<br/>                                                                                    |<span style="color:red"> - View, ViewController, DataController, Controller 접근</span><br/><span style="color:red"> - 상태 유지</span><br/><span style="color:red"> - 매우 특정한 모델 등에 밀접한 잡다한 코드들 모으기</span><br/>|
 
 
+// todo 이미지 추가
 
 백엔드에 적용
--
+- View, ViewController 빼고는 다를게 없다.
+- ServerAgent 부분은 DatabaseAgent로 변경해서 이는 DB에 접근하기 위한 용도로만 사용한다. 여기에는 비즈니스 로직을 넣지 않도록 한다.
+- API 호출을 받고 응답을 보내는 것은 DataController라기 보다는 클라이언트 agent에 더 가깝다.. 따라서 DataController라기 보다는 ApiController 등이 더 적합할 듯...
 
 프론트엔드 View, ViewController 재사용 전략
--
+- <span style="color:red">비슷한 코드를 copy & paste 하지 않는다! 찾아보면 방법은 있다.</span>
+- View는 매우 단순해야 한다. 데이터 변경, Action을 날리는 등 Controller가 할일을 하지 않아야 재활용 가능성이 높아진다.
+- View, ViewController는 상속 구조로 확장한다. 
+  - class BView extends AView
+- 상속에 따라 처리하는 데이터 타입이 바뀌면 이는 typescript의 generic type을 활용한다.
+  - class AView<AMODEL extends AModel>
+  - class BView extends AView<BModel>
+- 데이터 타입도 상속으로 처리한다.
+  - BModel extends AModel
+- Derived class에서는 메소드 overriding 등을 활용하여 super class와 다른 부분만 코딩한다.
+- super class의 메소드 중간에 다른 코드가 들어가야 하면 super class에 옵션 멤버를 두던가, super class method에서 중간에 abstract 메소드를 호출하고, 이를 derived class에서 오버라이딩 한다.
